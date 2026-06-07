@@ -10,12 +10,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Load model and encoders
 model = joblib.load('model/job_predictor.pkl')
 le = joblib.load('model/label_encoder.pkl')
 feature_names = joblib.load('model/feature_names.pkl')
 
-# Input schema
 class JobInput(BaseModel):
     title: str
     is_remote: int = 0
@@ -30,7 +28,6 @@ class JobInput(BaseModel):
     applies: float = 50
     views: float = 200
 
-# Encoding maps (must match training)
 WORK_TYPE_MAP = {"FULL_TIME": 1, "PART_TIME": 2, "CONTRACT": 0, "INTERNSHIP": 3, "OTHER": 4}
 EXP_LEVEL_MAP = {
     "Internship": 0, "Entry level": 1, "Associate": 2,
