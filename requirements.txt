@@ -7,3 +7,5 @@ numpy==2.4.6
 joblib==1.5.3
 python-dotenv==1.2.2
 pydantic==2.13.4
+streamlit==1.45.0
+requests==2.34.2
